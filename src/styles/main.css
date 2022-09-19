@@ -266,7 +266,7 @@ footer .card img {
     position: absolute;
     left: 0;
     top: 0;
-    display: fixed;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
