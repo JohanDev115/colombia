@@ -266,11 +266,11 @@ footer .card img {
     position: absolute;
     left: 0;
     top: 0;
-    display: none;
+    display: fixed;
     justify-content: center;
     align-items: center;
     background-color: white;
-    /* animation: loaded 2s forwards; */
+    animation: loaded 2s forwards;
     z-index: 1;
 }
 
