@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
+
+:root {
+    --text-color: #000;
+    --purple: #A51984;
+    --green: #6FB43F;
+    --yellow: #FFC324;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 20% 50% 30%;
+    grid-template-areas: "nav     aside"
+                         "main    aside"
+                         "footer  aside";
+    overflow-x: hidden;
+}
+
+header {
+    grid-area: nav;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 60px;
+
+    animation: 2s navbar .5s ease-in-out;
+}
+
+.logo {
+    display: block;
+    width: 70px;
+    height: 65px;
+    cursor: pointer;
+}
+
+header nav {
+    margin-left: 24px;
+}
+
+header nav a {
+    margin-right: 20px;
+    font-size: 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: var(--green);
+}
+
+@keyframes navbar {
+    from {
+        transform: translateY(-200px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+main {
+    grid-area: main;
+    width: 540px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    animation: 2s main .5s ease-in-out;
+}
+
+@keyframes main {
+    from {
+        transform: translateY(-600px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+main div {
+    width: min-content;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+main div h3 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin-bottom: -10px;
+}
+
+main div h1 {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+main p {
+    font-size: 1.6rem;
+    color: grey;
+}
+
+.side {
+    position: relative;
+    grid-area: aside;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.side h2 {
+    grid-column: 1 / 2;
+    grid-row: auto;
+    width: max-content;
+    font-size: 3rem;
+    font-weight: 300;
+    transform: rotate(-90deg);
+    animation: side-text .5s 2.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+}
+
+.card h2 {
+    margin: 14px 0;
+    font-size: 2rem;
+}
+
+.card p {
+    font-size: 1.6rem;
+    color: grey;
+}
+
+.card button,
+.contact-btn {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 16px;
+    padding: 8px 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--purple);
+    background-color: transparent;
+    border: 2px solid var(--purple);
+    cursor: pointer;
+}
+
+.card button:hover {
+    color: #fff;
+    background-color: var(--purple);
+}
+
+.side > .card {
+    width: 100%;
+    height: 500px;
+    grid-column: 2 / 6;
+    transition: transform .5s;
+
+    animation: 2s side-image 1s ease-in-out;
+}
+
+.side > .card:hover {
+    transform: scale(1.1);
+}
+
+@keyframes side-image {
+    from {
+        transform: translateX(600px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.side > .card > p {
+    padding: 0 16px;
+    margin-top: 14px;
+}
+
+@keyframes side-text {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.side > .item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    grid-column: 4 / 7;
+    grid-row: 1 / 2;
+    background-color: var(--yellow);
+    z-index: -1;
+}
+
+footer {
+    grid-area: footer;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 0 25px 0 0;
+    background-color: var(--yellow);
+
+    animation: 2s footer .5s ease-in-out forwards;
+}
+
+@keyframes footer {
+    from {
+        transform: translateY(600px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+footer .card {
+    transition: transform 1s;
+}
+
+footer .card:hover {
+    transform: translateY(-220px);
+}
+
+footer .card img {
+    height: 160px;
+}
+
+.loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* animation: loaded 2s forwards; */
+    z-index: 1;
+}
+
+@keyframes loaded {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: scaling 2s linear infinite forwards;
+}
+
+.loader-item:nth-child(1) {
+    background-color: var(--purple);
+    animation-delay: 200ms;
+}
+
+.loader-item:nth-child(2) {
+    background-color: var(--yellow);
+    animation-delay: 400ms;
+}
+
+.loader-item:nth-child(3) {
+    background-color: var(--green);
+    animation-delay: 600ms;
+}
+
+@keyframes scaling {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.2);
+    }
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal > div {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+.modal > div span {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--purple);
+    cursor: pointer;
+}
+
+.modal > div h1 {
+    font-size: 2.6rem;
+    margin-bottom: 30px;
+}
+
+.modal > div .slider {
+    width: 90%;
+    height: 340px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.modal > div .slider .card-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.modal > div .card{
+    width: 220px;
+    height: auto;
+    padding-bottom: 16px;
+    margin-bottom: 30px;
+}
+
+.modal > div .card img {
+    height: 140px;
+}
+
+.modal > div .card button {
+    display: none;
+}
+
+.modal > div > button {
+    position: static;
+    transform: translate(0);
+    width: 260px;
+    color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.modal > div > button:hover {
+    background-color: var(--yellow);
+    color: #fff;
+}
+
+#radio-1, #radio-2, #radio-3 {
+    display: none;
+}
+
+#radio-1:checked ~ #card-1,
+#radio-2:checked ~ #card-2,
+#radio-3:checked ~ #card-3 {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+#radio-1:checked ~ #card-2,
+#radio-2:checked ~ #card-3,
+#radio-3:checked ~ #card-1 {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#radio-1:checked ~ #card-3,
+#radio-2:checked ~ #card-1,
+#radio-3:checked ~ #card-2 {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 420px) {
+    body {
+        position: static;
+        display: block;
+        overflow-x: hidden;
+    }
+    header {
+        padding: 20px;
+        display: block;
+    }
+    .logo {
+        width: 90px;
+        height: 85px;
+        margin: 0 auto;
+        margin-bottom: 16px;
+    }
+    header nav {
+        margin-left: 0;
+        text-align: center;
+    }
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+    main div {
+        width: 100%;
+    }
+    .side {
+        display: block;
+        padding: 20px;
+    }
+    .side h2 {
+        transform: rotate(0deg);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 14px;
+    }
+    .side > .card:hover {
+        transform: scale(1);
+    }
+    .side > .item {
+        display: none;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 0;
+        background-color: #fff;
+    }
+    footer .card {
+        width: 280px;
+        margin: 0 auto;
+    }
+    footer .card:hover {
+        transform: translate(0);
+    }
+    .modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .modal > div {
+        width: 90%;
+    }
+    .modal > div .slider .card-container {
+        width: 85%;
+    }
+}

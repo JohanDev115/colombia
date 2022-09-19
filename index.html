@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colombia</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <img onclick="location.reload()" class="logo" src="./assets/images/colombia_logo.png" alt="Colombia's Logo">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Culture</a>
+            <a href="#">Tourism</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h3>Come to visit</h3>
+            <h1>Colombia!</h1>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ex rem dolores optio dolorem quis provident, deserunt reprehenderit natus. Cum facere quam ad sunt nesciunt commodi beatae vitae voluptates laboriosam. Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </main>
+    <section class="side">
+        <h2>Santa Marta</h2>
+        <div class="card card--main">
+            <img src="./assets/images/santa-marta.png" alt="Santa Marta">
+            <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing tortor ultricies ipsum et urna posuere pellentesque vestibulum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam vel nihil cupiditate, sapiente, totam ex necessitatibus suscipit iure.</p>
+            <button class="card__btn">Show</button>
+        </div>
+        <div class="item"></div>
+    </section>
+    <section class="modal hidden">
+        <div>
+            <span id="close-modal-btn">&times;</span>
+            <h1>Which hotel would you like to stay?</h1>
+            <div class="slider">
+                <input type="radio" name="slider" id="radio-1" checked>
+                <input type="radio" name="slider" id="radio-2">
+                <input type="radio" name="slider" id="radio-3">
+
+                <label for="radio-1" id="card-1" class="card-container">
+                    <div class="card">
+                        <img src="./assets/images/hotel.jpg" alt="Monteria">
+                        <h2>Hotel 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing tortor ultricies ipsum et urna posuere pellentesque vestibulum.</p>
+                    </div>
+                </label>
+                <label for="radio-2" id="card-2" class="card-container">
+                    <div class="card">
+                        <img src="./assets/images/hotel.jpg" alt="Monteria">
+                        <h2>Hotel 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing tortor ultricies ipsum et urna posuere pellentesque vestibulum.</p>
+                    </div>
+                </label>
+                <label for="radio-3" id="card-3" class="card-container">
+                    <div class="card">
+                        <img src="./assets/images/hotel.jpg" alt="Monteria">
+                        <h2>Hotel 3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing tortor ultricies ipsum et urna posuere pellentesque vestibulum.</p>
+                    </div>
+                </label>
+            </div>
+            <button class="contact-btn">Contact</button>
+        </div>
+    </section>
+    <div class="loader">
+        <div class="loader-item"></div>
+        <div class="loader-item"></div>
+        <div class="loader-item"></div>
+    </div>
+    <footer>
+        <div class="card">
+            <img src="./assets/images/monteria.png" alt="Monteria">
+            <h2>Monteria</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing tortor ultricies ipsum et urna posuere pellentesque vestibulum.</p>
+            <button class="card__btn">Show</button>
+        </div>
+        <div class="card">
+            <img src="./assets/images/valledupar.png" alt="Valledupar">
+            <h2>Valledupar</h2>
+            <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing tortor ultricies ipsum et urna posuere pellentesque vestibulum.</p>
+            <button class="card__btn">Show</button>
+        </div>
+        <div class="card">
+            <img src="./assets/images/barranquilla.png" alt="Barranquilla">
+            <h2>Barranquilla</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing tortor ultricies ipsum et urna posuere pellentesque vestibulum.</p>
+            <button class="card__btn">Show</button>
+        </div>
+    </footer>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
